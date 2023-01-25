@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Portal de notícias</title>
+			<link rel="stylesheet" href="/css/bootstrap.css">
+			<script src="https://unpkg.com/html5-qrcode"></script>
+		</head>
+	<body>
+		<h1 class="text-center"> Leitura de QRCode </h1>
+		<div class="container-sm">
+			<p class="text-sm-center fs-2"> Camera de leitura </p>
+			<center>
+				<div id="qr-reader"style="width: 600px"></div><br>
+			</center>
+			<p class="text-sm-center fs-2"> Deverá aparecer o resultado : </p> <br>
+			<p id="result" class="text-sm-center fs-1 text-white bg-dark"></p>
+			<form id="form-post" name="form" class="form" method="post" action="qrcode/check">
+				<input type="hidden" name="valor" id="result-post" value="">
+			</form>
+		</div>
+		<table class="table container-sm">
+			<tr>
+				<th class="col"> ID </th>
+				<th class="col"> Valor </td>
+				<th class="col"> Data e hora </td>
+			</tr>
+			<%
+				for(let i = 0; i < qrcode.length; i++){
+			%>
+			<tr>
+				<td> <%= qrcode[i].id %></td>
+				<td> <%= qrcode[i].valor %> </td>
+				<td> <%= qrcode[i].dataehora %> </td>
+			</tr>
+			<%
+				}
+			%>
+		</table>
+	<script src="/js/read_script.js"></script>
+	</body>
+</html>

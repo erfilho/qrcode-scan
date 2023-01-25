@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title> Teste QRCODE </title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<div class="wrapper">
+      <header>
+        <h1>QR Code Generator</h1>
+        <p>Paste a url or enter text to create QR code</p>
+      </header>
+        <form id="form-post" name="form" class="form" method="post" action="qrcode/save">
+          <input type="text" name="valor" id="myform" spellcheck="false" placeholder="Enter text or url">
+          <button>Generate QR Code</button>
+        </form>
+      <div class="qr-code">
+        <img src="" alt="qr-code">
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
